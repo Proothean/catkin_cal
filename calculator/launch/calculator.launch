@@ -1,9 +1,7 @@
 <launch>
     
-
-    <node name="calculator" pkg="calculator_node" type="calculator">
-
+    <node name="calculator" pkg="calculator" type="calculator_node" >
+	 
     </node>
    
-  
   </launch>
