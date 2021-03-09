@@ -9,7 +9,6 @@ string input2="-2+4";
 string input3="2+(-2)";
 string input4="(-2)-(-4)";
 string input5="((-2)+(-5))";
-string input6="2147483640+10";
     // Declare a test
     TEST(TestSuite, testCase1)
     {	
@@ -37,11 +36,6 @@ string input6="2147483640+10";
     {	
 	
      EXPECT_EQ(-7, calculator.calculate(input5));
-   }
-    TEST(TestSuite, testCase6)
-    {	
-	
-     EXPECT_EQ(2147483647, calculator.calculate(input6));
    }
 int main(int argc, char **argv){
      testing::InitGoogleTest(&argc, argv);
