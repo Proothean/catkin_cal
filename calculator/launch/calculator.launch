@@ -1,9 +1,8 @@
 <launch>
     
-
-    <node name="calculator" pkg="calculator_node" type="calculator">
-
+    
+    <node name="calculator_node" pkg="calculator" type="calculator_node" output="screen">
     </node>
+    <include file="$(find subscriber_node)/launch/subscriber.launch"/>
    
-  
   </launch>

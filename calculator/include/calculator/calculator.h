@@ -6,5 +6,5 @@ class Calculator
 {
   public:
 	Calculator();
-  int calculate(string& s);
+ long calculate(string& s);
 };
