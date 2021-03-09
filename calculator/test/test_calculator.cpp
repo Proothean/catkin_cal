@@ -2,7 +2,6 @@
 #include <ros/ros.h>
 #include <std_msgs/Int32.h>
 #include <gtest/gtest.h>
-#define TEST_EXPRESSION(a) EXPECT_EQ((a), Calculator::calculate(#a))
 Calculator calculator;
 string input1="2+4";
 string input2="-2+4";
