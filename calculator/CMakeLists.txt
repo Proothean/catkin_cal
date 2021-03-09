@@ -138,7 +138,9 @@ include_directories(
 add_executable(calculator_node
     src/calculator_node.cpp
     src/calculator.cpp
+    #test/test_calculator.cpp
     )
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -153,7 +155,13 @@ add_executable(calculator_node
  target_link_libraries(calculator_node
    ${catkin_LIBRARIES}
  )
-
+add_executable(test_calculator
+    src/calculator.cpp
+    test/test_calculator.cpp
+    )
+ target_link_libraries(test_calculator
+   ${catkin_LIBRARIES} gtest
+ )
 #############
 ## Install ##
 #############
@@ -201,10 +209,9 @@ add_executable(calculator_node
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_calculator.cpp)
-# if(TARGET ${PROJECT_NAME}-test)
-#   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
-# endif()
+# catkin_add_gtest(calculator_node test/test_calculator.cpp)
+# target_link_libraries(test_calculator_node ${catkin_LIBRARIES})
+
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)

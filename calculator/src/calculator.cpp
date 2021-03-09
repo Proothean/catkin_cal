@@ -1,13 +1,16 @@
 #include "../include/calculator/calculator.h"
 #include <ros/ros.h>
+#define MIN_INT -2147483648;
+#define MAX_INT 2147483647;
 using namespace std;
 Calculator::Calculator() {}
-int Calculator::calculate(string& s)
+long Calculator::calculate(string& s)
 {	
 	ROS_INFO_STREAM("BEGIN");
 	stack<int> stk;
     	int sign = 1;
         long num = 0, sum = 0;
+	long res;
     	for(int i = 0; i < s.size(); ++i)
     	{
     		if(s[i] =='(')
@@ -39,10 +42,11 @@ int Calculator::calculate(string& s)
                 stk.pop();
     			num = 0;
     		}
-    		else if(isdigit(s[i]))
+    		else if(isdigit(s[i])){
     			num = num*10+s[i]-'0';
+			}
     	}
-    	
+
 	ROS_INFO_STREAM("FINISH");
 	return sum+sign*num;
 }

@@ -11,7 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
-message_generation
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -135,13 +135,14 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/beginner_tutorials_node.cpp)
- add_executable(add_two_ints_server src/add_two_ints_server.cpp)
+   add_executable(add_two_ints_server src/add_two_ints_server.cpp)
    target_link_libraries(add_two_ints_server ${catkin_LIBRARIES})
    add_dependencies(add_two_ints_server beginner_tutorials_gencpp)
    
    add_executable(add_two_ints_client src/add_two_ints_client.cpp)
    target_link_libraries(add_two_ints_client ${catkin_LIBRARIES})
    add_dependencies(add_two_ints_client beginner_tutorials_gencpp)
+
 
 
 ## Rename C++ executable without prefix
@@ -206,9 +207,12 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_beginner_tutorials.cpp)
+
+
+catkin_add_gtest(test_beginner_tutorials launch/beginner_tutorials.launch test/test_beginner_tutorials.cpp )
+target_link_libraries(test_beginner_tutorials ${catkin_LIBRARIES} ${GTEST_LIBRARIES})
 # if(TARGET ${PROJECT_NAME}-test)
-#   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
+   #target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
 
 ## Add folders to be run by python nosetests

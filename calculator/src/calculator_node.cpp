@@ -10,8 +10,7 @@ int main(int argc,char **argv){
 	ros::Rate rate(100);
 	std_msgs::Int32 msg;
 	string input;
-	int result;
-	
+	long result;
   	ROS_INFO_STREAM("type expression");
   	cin>>input;
 	ROS_INFO_STREAM("calculate "<<input<<"..."<<endl);
@@ -20,6 +19,7 @@ int main(int argc,char **argv){
 	msg.data=result;
 	pub_result.publish(msg);
 	ros::spinOnce();	
+return 0;
 	
 }
  
