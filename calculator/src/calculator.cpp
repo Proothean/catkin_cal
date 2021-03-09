@@ -6,7 +6,7 @@ using namespace std;
 Calculator::Calculator() {}
 long Calculator::calculate(string& s)
 {	
-	ROS_INFO_STREAM("BEGIN");
+	//ROS_INFO_STREAM("BEGIN");
 	stack<int> stk;
     	int sign = 1;
         long num = 0, sum = 0;
@@ -47,6 +47,6 @@ long Calculator::calculate(string& s)
 			}
     	}
 
-	ROS_INFO_STREAM("FINISH");
+	//ROS_INFO_STREAM("FINISH");
 	return sum+sign*num;
 }
