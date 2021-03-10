@@ -57,7 +57,7 @@ SUMMARY
 ```
 You can also customize your testbench by editing source code which locate in `/test/test_calculator.cpp`.
 ## Calculator
-  Source codes are located in `catkin_ws/src/calculator/src`. The calculator is mainly implemented by `calculator.cpp`. `calculator_node.cpp` construct a publisher node which communicates with another subscriber_node located in`catkin_ws/src/subscriber_node/src/subscriber.cpp`. The subscriber will receive the result and show on the terminal.
+  Source codes are located in `catkin_ws/src/calculator/src`. The calculator is mainly implemented with `stack` in `calculator.cpp/class calculator`. `calculator_node.cpp` construct a publisher node which communicates with another subscriber_node located in`catkin_ws/src/subscriber_node/src/subscriber.cpp`. The subscriber will receive the result and show on the terminal.
 
 ## Unit test
   5 Unit tests are designed to test the implementation of calculator. The testbench are 
