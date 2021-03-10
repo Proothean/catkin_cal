@@ -8,7 +8,7 @@ int main(int argc,char **argv){
 	ros::init(argc,argv,"calculator_node");
 	ros::NodeHandle nh;
 	ros::Publisher pub_result = nh.advertise<std_msgs::Int32>("result", 1000);
-
+	ros::Rate rate(100);
 	std_msgs::Int32 msg;
 	string input;
 	long result;
@@ -23,7 +23,7 @@ int main(int argc,char **argv){
 	msg.data=result;
 	pub_result.publish(msg);
 
-	ros::spinOnce();	
+	ros::spin();	
 return 0;
 	
 }
